@@ -132,7 +132,7 @@ int main(int argc, char**argv)
     glutMainLoop();///主要的迴圈
     return 0;
 }
-![image](https://github.com/xytungg/2022graphics/blob/main/2.png?raw=true)
+![image](https://github.com/xytungg/2022graphics/blob/main/3.png?raw=true)
 ```
 4. mouse滑鼠事件，我們使用glutMouseFunc(mouse)來註冊 void mouse(int button, int state, int x, int y) 的這個函式，使用printf()把值印出來，加深大家的印象，了解左鍵0、中鍵1、右鍵2、了解，按下去0，放開1， 了解座標0...300 的值
 ```c
@@ -160,7 +160,7 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
-![image](https://github.com/xytungg/2022graphics/blob/main/3.png?raw=true)
+![image](https://github.com/xytungg/2022graphics/blob/main/4.png?raw=true)
 5.將剛剛的印出座標改成控制茶壺在視窗中的方向
 ```c
 #include <GL/glut.h>
