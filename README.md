@@ -133,3 +133,30 @@ int main(int argc, char**argv)
 }
 
 ```
+4. mouse滑鼠事件，我們使用glutMouseFunc(mouse)來註冊 void mouse(int button, int state, int x, int y) 的這個函式，使用printf()把值印出來，加深大家的印象，了解左鍵0、中鍵1、右鍵2、了解，按下去0，放開1， 了解座標0...300 的值
+```c
+#include <GL/glut.h>
+#include <stdio.h>
+void display()
+{
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+
+    glutSwapBuffers();///交換2倍的buffer
+}
+void mouse( int button, int state, int x, int y )
+{
+    printf("%d %d %d %d\n", button, state, x, y);
+}
+int main(int argc, char**argv)
+{///進階的 main函式
+    glutInit( &argc, argv );///初始化
+    glutInitDisplayMode( GLUT_DOUBLE | GLUT_DEPTH );///兩倍 + 3D
+    glutCreateWindow("week04 mouse");///建視窗
+
+    glutDisplayFunc( display );///今天用來畫圖的函式
+    glutMouseFunc(mouse);
+    glutMainLoop();///主要的迴圈
+    return 0;
+}
+
+```
