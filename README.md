@@ -160,3 +160,35 @@ int main(int argc, char**argv)
 }
 
 ```
+5.將剛剛的印出座標改成控制茶壺在視窗中的方向
+```c
+#include <GL/glut.h>
+#include <stdio.h>
+int mouseX=0, mouseY=0;
+void display()
+{
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    glColor3f(1,1,0);
+    glPushMatrix();
+        glTranslatef( (mouseX-150)/150.0, -(mouseY-150)/150.0, 0);
+        glutSolidTeapot(0.3);
+    glPopMatrix();
+    glutSwapBuffers();///交換2倍的buffer
+}
+void mouse( int button, int state, int x, int y )
+{
+    mouseX=x; mouseY=y;
+}
+int main(int argc, char**argv)
+{///進階的 main函式
+    glutInit( &argc, argv );///初始化
+    glutInitDisplayMode( GLUT_DOUBLE | GLUT_DEPTH );///兩倍 + 3D
+    glutCreateWindow("week04 mouse");///建視窗
+
+    glutDisplayFunc( display );///今天用來畫圖的函式
+    glutMouseFunc(mouse);
+    glutMainLoop();///主要的迴圈
+    return 0;
+}
+
+```
