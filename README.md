@@ -71,7 +71,6 @@ int main(int argc, char**argv)
 windows.zip > 下載\windows\Transformation.exe
 data.zip         > 下載\windows\data\很多模型
 執行 Transformation.exe
-![image](https://github.com/xytungg/2022graphics/blob/main/1.png?raw=true)
 2. 將紅色的茶壼移到右上方，避免亂動要加上glPushMatrix()及glPopMatrix()
 ```c
 #include <GL/glut.h>
@@ -98,7 +97,6 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
-![image](https://github.com/xytungg/2022graphics/blob/main/2.png?raw=true)
 3. 標上座標可做成四個茶壺
 ```c
 #include <GL/glut.h>
@@ -132,7 +130,6 @@ int main(int argc, char**argv)
     glutMainLoop();///主要的迴圈
     return 0;
 }
-![image](https://github.com/xytungg/2022graphics/blob/main/3.png?raw=true)
 ```
 4. mouse滑鼠事件，我們使用glutMouseFunc(mouse)來註冊 void mouse(int button, int state, int x, int y) 的這個函式，使用printf()把值印出來，加深大家的印象，了解左鍵0、中鍵1、右鍵2、了解，按下去0，放開1， 了解座標0...300 的值
 ```c
@@ -160,7 +157,6 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
-![image](https://github.com/xytungg/2022graphics/blob/main/4.png?raw=true)
 5.將剛剛的印出座標改成控制茶壺在視窗中的方向
 ```c
 #include <GL/glut.h>
@@ -192,7 +188,6 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
-![image](https://github.com/xytungg/2022graphics/blob/main/5.png?raw=true)
 6.利用滑鼠來寫程式，把座標備份在mx[i]及my[i]裡面。
 ```c
 #include <GL/glut.h>
@@ -232,4 +227,3 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
-![image](https://github.com/xytungg/2022graphics/blob/main/6.png?raw=true)
