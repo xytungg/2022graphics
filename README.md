@@ -74,3 +74,37 @@ data.zip         > 下載\windows\data\很多模型
 執行 Transformation.exe
 2. 將紅色的茶壼移到右上方，避免亂動要加上glPushMatrix()及glPopMatrix()
 3. 標上座標可做成四個茶壺
+```c
+#include <GL/glut.h>
+void myTeapot( float x, float y )
+{
+    glPushMatrix();
+        glTranslatef( x, y, 0);
+        glutSolidTeapot(0.3);
+    glPopMatrix();
+}
+void display()
+{
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    glColor3f(1,0,0);///紅色
+    myTeapot(+0.5, +0.5);
+    myTeapot(+0.5, -0.5);
+    myTeapot(-0.5, -0.5);
+    myTeapot(-0.5, +0.5);
+
+    glutSwapBuffers();///交換2倍的buffer
+}
+
+int main(int argc, char**argv)
+{///進階的 main函式
+    glutInit( &argc, argv );///初始化
+    glutInitDisplayMode( GLUT_DOUBLE | GLUT_DEPTH );///兩倍 + 3D
+    glutCreateWindow("week03的視窗");///建視窗
+
+    glutDisplayFunc( display );///今天用來畫圖的函式
+
+    glutMainLoop();///主要的迴圈
+    return 0;
+}
+
+```
