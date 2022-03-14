@@ -65,3 +65,12 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
+
+# week4
+
+1. 下載範例 jsyeh.org/3dcg10
+windows.zip > 下載\windows\Transformation.exe
+data.zip         > 下載\windows\data\很多模型
+執行 Transformation.exe
+2. 將紅色的茶壼移到右上方，避免亂動要加上glPushMatrix()及glPopMatrix()
+3. 標上座標可做成四個茶壺
