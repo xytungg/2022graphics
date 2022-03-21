@@ -228,7 +228,7 @@ int main(int argc, char**argv)
 }
 ```
 # week5
-1. 旋轉茶壺
+1. 用glRotatef旋轉茶壺
 ```c
 #include <GL/glut.h>
 void display()
