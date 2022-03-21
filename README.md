@@ -227,7 +227,7 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
-# week05
+# week5
 ```c
 #include <GL/glut.h>
 void display()
