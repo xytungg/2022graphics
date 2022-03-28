@@ -468,3 +468,94 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
+3.做出 glTranslatef() 移動
+```c
+#include <GL/glut.h>
+#include <stdio.h>
+float x=0, y=0, z=0, oldX, oldY;
+void display()
+{
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    glPushMatrix();
+        glTranslatef( (x-150)/150.0 , -(y-150)/150.0, z);
+        ///glRotatef( angle, 0, 0, 1);
+        ///glScalef( scale, scale, scale );
+        glColor3f( 1, 1, 0 );
+        glutSolidTeapot(0.3);
+    glPopMatrix();
+    glutSwapBuffers();
+}
+void keyboard( unsigned char key, int mouseX, int mouseY )
+{
+    printf("現在按下：%c 座標在：%d %d\n", key, x, y);
+}
+void mouse ( int button, int state, int mouseX, int mouseY )
+{
+    oldX=mouseX; oldY=mouseY;
+}
+void motion(int mouseX, int mouseY)
+{
+    x += (mouseX-oldX);
+    y += (mouseY-oldY);
+    oldX = mouseX; oldY = mouseY;
+    display();
+}
+int main(int argc, char**argv)
+{///進階的 main函式
+    glutInit( &argc, argv );///初始化
+    glutInitDisplayMode( GLUT_DOUBLE | GLUT_DEPTH );///兩倍 + 3D
+    glutCreateWindow("week06 keyboard");///建視窗
+
+    glutDisplayFunc( display );///今天用來畫圖的函式
+    glutKeyboardFunc(keyboard);
+    glutMouseFunc(mouse);
+    glutMotionFunc(motion);
+    glutMainLoop();///主要的迴圈
+    return 0;
+}
+```
+4. 實作「縮放」程式，利用 float scale=1.0 這個變數，如果 if(mousX大於oldX)就讓 scale 放大 1%，反過來就讓 scale 變小 1%
+```c
+#include <GL/glut.h>
+#include <stdio.h>
+float x=0, y=0, z=0, scale=1.0, oldX, oldY;
+void display()
+{
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    glPushMatrix();
+        ///glRotatef( angle, 0, 0, 1);
+        glScalef( scale, scale, scale );
+        glColor3f( 1, 1, 0 );
+        glutSolidTeapot(0.3);
+    glPopMatrix();
+    glutSwapBuffers();
+}
+void keyboard( unsigned char key, int mouseX, int mouseY )
+{
+    printf("現在按下：%c 座標在：%d %d\n", key, x, y);
+}
+void mouse ( int button, int state, int mouseX, int mouseY )
+{
+    oldX=mouseX; oldY=mouseY;
+}
+void motion(int mouseX, int mouseY)
+{
+    if( mouseX>oldX ) scale = scale * 1.01;
+    if( mouseX<oldX ) scale = scale * 0.99;
+    oldX = mouseX; oldY = mouseY;
+    display();
+}
+int main(int argc, char**argv)
+{///進階的 main函式
+    glutInit( &argc, argv );///初始化
+    glutInitDisplayMode( GLUT_DOUBLE | GLUT_DEPTH );///兩倍 + 3D
+    glutCreateWindow("week06 keyboard");///建視窗
+
+    glutDisplayFunc( display );///今天用來畫圖的函式
+    glutKeyboardFunc(keyboard);
+    glutMouseFunc(mouse);
+    glutMotionFunc(motion);
+    glutMainLoop();///主要的迴圈
+    return 0;
+}
+```
