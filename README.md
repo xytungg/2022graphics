@@ -419,9 +419,9 @@ void keyboard( unsigned char key, int x, int y )
 }
 int main(int argc, char**argv)
 {
-    glutInit( &argc, argv );///初始化
+    glutInit( &argc, argv );
     glutInitDisplayMode( GLUT_DOUBLE | GLUT_DEPTH );
-    glutCreateWindow("week06 keyboard");///建視窗
+    glutCreateWindow("week06 keyboard");
 
     glutDisplayFunc( display );
     glutKeyboardFunc(keyboard);
