@@ -429,7 +429,9 @@ int main(int argc, char**argv)
     glutMainLoop();
     return 0;
 }
+```
 2. 加上 mouse() 及 motion()函式，希望能完整互動 
+
 ```c
 #include <GL/glut.h>
 #include <stdio.h>
@@ -465,5 +467,4 @@ int main(int argc, char**argv)
     glutMainLoop();///主要的迴圈
     return 0;
 }
-```
 ```
