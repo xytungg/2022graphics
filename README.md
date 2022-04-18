@@ -817,6 +817,7 @@ int main( int argc, char**argv )
 }
 ```
 # week09
+利用 CodeBlocks 的 Opencv 開啟圖檔
 ```c++
 
  #include <opencv/highgui.h>
