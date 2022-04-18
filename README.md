@@ -821,17 +821,14 @@ int main( int argc, char**argv )
 ```c++
 
  #include <opencv/highgui.h>
-
 int main()
-
-{
+{///Ipl 是 Image performance library 的縮寫
 
     IplImage * img = cvLoadImage("檔名.png"); ///讀圖
 
     cvShowImage("week09", img); ///秀圖
 
     cvWaitKey(0); ///等任意鍵繼續
-
 }
 
 ```
