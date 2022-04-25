@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1650875455 source:c:\users\xyt\onedrive\桌面\source\glm.cpp
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	"glm.h"
+
+1650875455 c:\users\xyt\onedrive\桌面\source\glm.h
+	<GL/glut.h>
+
+1647089040 c:\users\xyt\onedrive\桌面\freeglut\include\gl\glut.h
+	"freeglut_std.h"
+
+1647089040 c:\users\xyt\onedrive\桌面\freeglut\include\gl\freeglut_std.h
+	<windows.h>
+	<EGL/egl.h>
+	<GLES/gl.h>
+	<GLES2/gl2.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1514140588 source:c:\users\xyt\onedrive\桌面\week10_texture_model\main.cpp
+	<GLUT/glut.h>
+	<GL/glut.h>
+	<stdlib.h>
+
