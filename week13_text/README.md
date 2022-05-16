@@ -51,3 +51,33 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
+3.移動紅色方塊位置到正中心
+```c
+#include <GL/glut.h>
+void display()
+{
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    glColor3f(1, 1, 1);
+    glRectf(0.5, 0.5, -0.5, -0.5);///身體
+    glPushMatrix();
+        ///glTranslatef(x, y, z);
+        glRotatef(45, 0, 0, 1);
+        glTranslatef(-0.5, -0.4, 0);
+        glColor3f(1, 0, 0);
+        glRectf(0.5, 0.5, 1.0, 0.3);///手臂
+    glPopMatrix();
+    glutSwapBuffers();
+}
+
+int main(int argc, char**argv)
+{
+    glutInit( &argc, argv );
+    glutInitDisplayMode( GLUT_DOUBLE | GLUT_DEPTH );
+    glutInitWindowSize(600, 600);
+    glutCreateWindow("week13 rect TRT");
+
+    glutDisplayFunc( display );
+    glutMainLoop();
+    return 0;
+}
+```
