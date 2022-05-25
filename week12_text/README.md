@@ -50,7 +50,7 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
-## 3. 白色茶壺掛上紅色茶壺
+## 3. 將紅色茶壺掛在白色茶壺上
 ```c
 #include <GL/glut.h>
 float angle=0;
@@ -81,7 +81,7 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
-## 4. 白色茶壺掛上紅色茶壺1 紅色茶壺1掛上紅色茶壺2
+## 4. 紅色茶壺2掛在紅色茶壺1上 紅色茶壺1掛在白色茶壺上
 ```c
 #include <GL/glut.h>
 float angle=0;
