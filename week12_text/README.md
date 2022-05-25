@@ -23,7 +23,34 @@ int main(int argc, char**argv)
     return 0;
 }
 ```
-## 2. 紅色茶壺跟白色茶壺
+## 2. 白色茶壺旋轉
+```c
+#include <GL/glut.h>
+float angle =0;
+void display()
+{
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    glPushMatrix();
+        glRotatef(angle, 0, 0, 1);
+        glTranslatef( 0.4, -0.07, 0 );
+        glutSolidTeapot( 0.3 );
+    glPopMatrix();
+    glutSwapBuffers();
+    angle += 0.1;
+}
+
+int main(int argc, char**argv)
+{
+    glutInit( &argc, argv );
+    glutInitDisplayMode( GLUT_DOUBLE | GLUT_DEPTH );
+    glutCreateWindow("week12 TRT");
+    glutIdleFunc( display );
+    glutDisplayFunc( display );
+    glutMainLoop();
+    return 0;
+}
+```
+## 3. 紅色茶壺跟白色茶壺
 ```c
 #include <GL/glut.h>
 float angle=0;
