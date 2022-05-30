@@ -48,7 +48,7 @@ int main()
 
 }
 ```
-5. 接續上週 week14_angles_TRT_write_and_read
+5. 接續上週 week14_angles_TRT_write_and_read，改成固定後記錄動作
 ```c
 #include <GL/glut.h>
 #include <stdio.h> ///為了 printf, fprintf, fopen, fclose
