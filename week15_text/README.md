@@ -148,6 +148,7 @@ int main(int argc, char**argv)
 #include <stdio.h>
 #include "glm.h"
 GLMmodel * pmodel = NULL;
+
 float angle[20],oldX=0;
 int angleID=0;///0:第0個關節,1:第1個關節,2:第2個關節
 FILE * fout = NULL,* fin = NULL;
@@ -257,4 +258,5 @@ int main(int argc,char**argv)
     glutDisplayFunc(display);///不放Idle
     glutMainLoop();
 }
+
 ```
