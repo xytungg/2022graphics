@@ -1,4 +1,4 @@
-# 學習內插
+## 1. 修改week15週程式碼 學習內插
 ```c
 #include <GL/glut.h>
 #include <stdio.h> ///為了 printf, fprintf, fopen, fclose
