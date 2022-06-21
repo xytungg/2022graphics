@@ -10,3 +10,26 @@
 ### d. 將freeglut.dll複製丟進當日資料夾
 ### e. 在當日資料夾新增data資料夾，將分割好的obj檔和mtl檔丟入
 ### f. Glut專案初始程式碼
+```c
+#include <GL/glut.h>
+#include <stdio.h>
+void display(){
+    glClearColor(1, 1, 0, 0);///調整背景顏色
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    glColor3f(1, 0, 0); ///紅色的
+    glutSolidTeapot( 0.3 );
+    glutSwapBuffers();
+}
+int main(int argc, char**argv)
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
+    glutCreateWindow("week17 demo");
+
+    glutDisplayFunc(display);
+    
+    glutMainLoop();
+}
+```
+=>輸出會得到黃色背景紅色茶壺
